@@ -1,20 +1,19 @@
-import { CounterContext } from "@/useContext"
-import { useContext } from "react"
+import { RootState } from '@/Store/store'
+import { decrement, increPlay, increment } from '@/slices/counter'
+import { useSelector, useDispatch } from 'react-redux'
 
-type Props = {
 
-}
-
-const Counter = (props: Props) => {
-
-    const { count, increment, decrement } = useContext(CounterContext)
+const Counter = () => {
+    const dispatch = useDispatch()
+    const { count } = useSelector((state: RootState) => state.counter)
 
     return (
-        <>
-            count : {count}
-            <button onClick={() => increment()}>Tăng</button>
-            <button onClick={() => decrement()}>Giảm</button>
-        </>
+        <div >
+            <h1 className='text-center'> count : {count} </h1>
+            <button className='text-white px-4 py-2 bg-slate-400' onClick={() => dispatch(increment(1))} >Tăng</button>
+            <button className='text-white px-4 py-2 bg-gray-600' onClick={() => dispatch(decrement(1))}>Giảm</button>
+            <button className='text-white px-4 py-2 bg-gray-600' onClick={() => dispatch(increPlay(10))}>increPlay</button>
+        </div>
     )
 }
 

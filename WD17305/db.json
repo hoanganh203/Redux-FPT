@@ -48,5 +48,27 @@
       "name": "PhoneStore FPOLY",
       "id": 12
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Product A",
+      "price": 100
+    },
+    {
+      "id": 2,
+      "name": "Product B",
+      "price": 200
+    },
+    {
+      "name": "Product update",
+      "id": 3,
+      "price": 500
+    },
+    {
+      "name": "Product Added",
+      "price": 500,
+      "id": 4
+    }
   ]
 }
